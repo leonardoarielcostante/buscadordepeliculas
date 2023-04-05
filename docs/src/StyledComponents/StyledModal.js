@@ -21,4 +21,15 @@ export const StyledModal = styled.div`
   p {
     width: 600px;
   }
+
+  @media(max-width: 900px){
+    flex-direction: column;
+    text-align: center;
+    font-size: 12px;
+
+
+    p {
+      width: 300px;
+    }
+  }
 `
