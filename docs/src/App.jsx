@@ -48,7 +48,7 @@ export default function BuscadorDePeliculas(){
                        ref={nombrePelicula}
                        type="text" />
           <StyledButton>Buscar</StyledButton>
-          <StyledButton margin={'0 0px 0 8px'}
+          <StyledButton margin={'0 4px 0 8px'}
                         onClick={ recomendadas }
           >Recomendado</StyledButton>
         </StyledForm>
