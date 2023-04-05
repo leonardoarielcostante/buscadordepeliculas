@@ -181,6 +181,17 @@ Error generating stack: `+o.message+`
   p {
     width: 600px;
   }
+
+  @media(max-width: 900px){
+    flex-direction: column;
+    text-align: center;
+    font-size: 12px;
+
+
+    p {
+      width: 300px;
+    }
+  }
 `;function Fm({estado:e,cerrarVentana:t,datosPelicula:n}){return e&&Z.jsxs(Dm,{children:[Z.jsx("header",{children:Z.jsx(nd,{alt:"Imagen de la pelicula",src:n.Poster,height:"350"})}),Z.jsxs("main",{children:[Z.jsx("h2",{children:n.Titulo}),Z.jsxs("p",{children:["Fecha de lanzamiento: ",n.Fecha]}),Z.jsx("p",{children:n.Descripcion}),Z.jsx(iu,{onClick:()=>t(),children:"Cerrar"})]})]})}function Um(){const[e,t]=ae.useState([]),n=Math.floor(Math.random()*20+1),r=Math.floor(Math.random()*20),o=`https://api.themoviedb.org/3/movie/popular?api_key=8bd02591db3d6ffcc94b9137f4fffd2a&language=es-ES&page=${n}`;return ae.useEffect(()=>{fetch(o).then(i=>i.json()).then(i=>t(i.results))},[]),e[r]}function Bm(){const e=ae.useRef(""),[t,n]=ae.useState(""),[r,l]=ae.useState(!1),[o,i]=ae.useState([]),u=Um(),s=p=>{p.preventDefault(),n(e.current.value)},c=p=>{l(!0),i(p)},m=()=>{l(!1)},h=p=>{p.preventDefault(),n(u.title)};return Z.jsxs(Lm,{children:[Z.jsx("header",{children:Z.jsx("h1",{children:"Buscador de Peliculas"})}),Z.jsxs(Om,{children:[Z.jsxs(Tm,{onSubmit:s,children:[Z.jsx(Rm,{placeholder:"Avengers, The Matrix, Indiana Jhones, ...",ref:e,type:"text"}),Z.jsx(iu,{children:"Buscar"}),Z.jsx(iu,{margin:"0 4px 0 8px",onClick:h,children:"Recomendado"})]}),Z.jsx(Im,{children:Z.jsx(Mm,{query:t,abrirVentana:c})}),Z.jsx(Fm,{estado:r,cerrarVentana:m,datosPelicula:o})]})]})}const Vm=$m`
   body, html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
