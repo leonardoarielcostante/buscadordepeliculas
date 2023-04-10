@@ -11,20 +11,32 @@ export function useFetchMovies(buscar){
   useEffect(() => {
     fetch(MOVIES_URL)
       .then((res) => {
+        if(!res.ok){
+          throw new Error('Fallo en la peticion')
+        }
         return res.json()
       })
       .then((res) => {
         return setPeliculas(res.results)
+      })
+      .catch(error => {
+        console.error('Hubo un error en la peticion:', error)
       })
   }, [buscar]);
 
   useEffect(() => {
     fetch(RECOMENDATION_URL)
     .then((res) => {
+      if(!res.ok){
+        throw new Error('Fallo en la peticion')
+      }
       return res.json()
     })
     .then((res) => {
       return setPeliculas(res.results)
+    })
+    .catch(error => {
+      console.error('Hubo un error en la peticion:', error)
     })
   }, []);
 
